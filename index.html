@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Interactive Website</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #f0f0f0;
+    }
+    p {
+      font-size: 18px;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #2c3e50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+  <script>
+    function changeContent() {
+      document.getElementById("myText").innerHTML = "This is the new content! 🎉";
+    }
+  </script>
+</head>
+<body>
+  <h1>Interactive Webpage Example</h1>
+  <p id="myText">Click the button to change this text.</p>
+  <button onclick="changeContent()">Change Text</button>
+</body>
+</html>
