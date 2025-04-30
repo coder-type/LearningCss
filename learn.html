@@ -35,18 +35,18 @@
         <date>Date: July 20, 2024</date><br>
         <img src="https://cdn.freecodecamp.org/curriculum/labs/past-event2.jpg" alt="virtual image">
     </section>
-    <form action="/submit" method="post">
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-      
-        <br>
-      
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
-      
-        <br>
-      
-        <input type="submit" value="Post">
-      </form>      
+    <form id="myForm">
+        <label for="post">Your Post:</label>
+        <input type="text" id="post" name="post" required>
+        <br><br>
+        <input type="submit" value="Submit">
+      </form>
+    
+      <script>
+        document.getElementById("myForm").addEventListener("submit", function(event) {
+          event.preventDefault(); // stops form from actually submitting
+          alert("Your post has been submitted!");
+        });
+      </script>
 </body>
 </html>
