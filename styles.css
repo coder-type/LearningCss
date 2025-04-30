@@ -20,7 +20,10 @@ ul {
     text-align: center;
     padding-top: 150px;
 }
-
+.tagline {
+    padding-left: 800px;
+    margin-top: -20px;
+}
 button {
 padding:20px;
 border-radius:8px;
