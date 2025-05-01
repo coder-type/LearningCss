@@ -1,3 +1,4 @@
+// Karl Pearson and Rank
 #include<iostream>
 #include<cmath>
 using namespace std;
