@@ -1,0 +1,42 @@
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.header{
+    color: #ffbb50;
+}
+ul {
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    list-style: none;
+    overflow: auto;
+}
+.body-content-all{
+    flex: auto;
+
+}
+.name{
+    font-size: 48px;
+    color: #ffbc70;
+    text-align: center;
+    padding-top: 150px;
+}
+.tagline {
+    padding-left: 800px;
+    margin-top: -20px;
+}
+button {
+padding:20px;
+border-radius:8px;
+border:15px;
+cursor:pointer;
+}
+button:hover {
+    background-color: aqua;
+    transform: translateY(-10px);
+}
+#result {
+    margin-top: 20px;
+    font-size: 20px;
+    color: green;
+}
+

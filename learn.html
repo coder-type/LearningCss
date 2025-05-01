@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Hub</title>
+</head>
+<body>
+    <header>
+        <h1>Event Hub</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#upcomming-events">Upcoming Events</a></li>
+            <li><a href="#past-events">Past Events</a></li>
+        </ul>
+    </nav>
+    <section>
+        <h2>Upcoming Events</h2>
+        <h3>AI & Machine Learning Conference 2024</h3>
+        <p>Join us for a deep dive into the latest advancements in artificial intelligence and machine learning. Industry leaders will share insights and case studies on how AI is transforming various sectors.</p>
+        <date>Date: August 10, 2024</date>
+        <h3>Web Development Bootcamp</h3>
+        <p>A hands-on workshop designed for developers looking to enhance their skills in modern web technologies including React, Node.js, and GraphQL. Perfect for both beginners and experienced developers.</p>
+        <date>Date: September 5, 2024</date>
+    </section>
+    <section>
+        <h2>Past Events</h2>
+        <h3>Cybersecurity Summit 2024 </h3>
+        <p>An event focusing on the latest trends and threats in cybersecurity. Experts discussed strategies for protecting data and ensuring privacy in an increasingly digital world.</p>
+        <date>Date: June 15, 2024</date><br>
+        <img src="https://cdn.freecodecamp.org/curriculum/labs/past-event1.jpg" alt="Just an old computer">
+        <h3>Blockchain Expo 2024</h3>
+        <p>A comprehensive event covering the future of blockchain technology. Topics included decentralized finance (DeFi), smart contracts, and the impact of blockchain on various industries.</p>
+        <date>Date: July 20, 2024</date><br>
+        <img src="https://cdn.freecodecamp.org/curriculum/labs/past-event2.jpg" alt="virtual image">
+    </section>
+    <form id="myForm">
+        <label for="post">Your Post:</label>
+        <input type="text" id="post" name="post" required>
+        <br><br>
+        <input type="submit" value="Submit">
+      </form>
+    
+      <script>
+        document.getElementById("myForm").addEventListener("submit", function(event) {
+          event.preventDefault(); // stops form from actually submitting
+          alert("Your post has been submitted!");
+        });
+      </script>
+</body>
+</html>

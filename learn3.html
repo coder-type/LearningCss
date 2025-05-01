@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Survey Form</title>
+  </head>
+
+  <body>
+    <h1 id="title">Survey Form</h1>
+    <p id="description">This a special survey to understand your nature</p>
+  <form id="survey">
+    <fieldset>
+      <legend>Important Details</legend>
+    <label for="name">Name (required):</label>
+    <input type="text" id="name"  name="name" placeholder="Manoj Rai">
+    <label for="email">Email (required):</label>
+    <input required type="email" id="email" name="email" placeholder="example@gmail.com" >
+    <label for="number">Age</label>
+    <input required type="number" id="number" name="number" min="3" max="100">
+    </fieldset>
+    <fieldset>
+      <legend>Casual Details</legend>
+<label id="dropdown"><b>What are <em>your</em> hobbys?</b></label>
+<select>
+  <option value="playing-games">Playing Games</option>
+  <option value="Hanging-out">Hanging out</option>
+  <option value="Sleeping">Sleeping</option>
+  <option value="cooking">Cooking</option>
+</select>
+</fieldset>
+<fieldset>
+  <legend>Gender</legend>
+  <label for="gender"><b>What is <em>your</em> gender?</b></label><br><br>
+<label for="male">Male</label>
+<input type="checkbox" id="male" name="male" value="male">
+<label for="female">Female</label>
+<input type="checkbox" id="female" name="female" value="female">
+<label for="rather-not-say">Rather not say</label>
+<input type="checkbox" id="rather-not-say" name="rather-not-say">
+  </fieldset>
+  <fieldset>
+    <legend>Feedback</legend>
+    <label for="survey">How was the Survey?</label>
+    <textarea id="survey" name="survey" cols="20" rows="10"></textarea>
+    <button id="submit">Submit</button>
+    </fieldset>
+  </form>
+  </body>
+</html>
