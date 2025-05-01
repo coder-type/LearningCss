@@ -1,0 +1,5 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     '/Users/manojrai/Documents/Bsc_Csit_2_semsester_Notes/justpractice'
+relocations:     []
+...
