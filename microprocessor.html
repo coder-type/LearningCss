@@ -1,130 +1,261 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Microprocessor Notes - Chapter 1 & 2</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f9f9f9;
-      color: #333;
-      margin: 0;
-      padding: 20px;
-    }
-    h1, h2 {
-      color: #2c3e50;
-    }
-    section {
-      background: #fff;
-      border-radius: 10px;
-      padding: 20px;
-      margin-bottom: 20px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    summary {
-      font-weight: bold;
-      font-size: 1.1em;
-      cursor: pointer;
-    }
-    ul {
-      line-height: 1.6;
-    }
-    code {
-      background: #eee;
-      padding: 2px 5px;
-      border-radius: 4px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to Microprocessor - Notes</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+        }
+        h1 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #2980b9;
+            margin-top: 30px;
+        }
+        h3 {
+            color: #16a085;
+        }
+        .definition {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-left: 4px solid #3498db;
+            margin: 20px 0;
+        }
+        .evolution {
+            background-color: #e8f4f8;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .components {
+            background-color: #f0f7ea;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .applications {
+            background-color: #f5e8f7;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .highlight {
+            background-color: #fffde7;
+            padding: 2px 4px;
+            border-radius: 3px;
+        }
+    </style>
 </head>
 <body>
-
-  <h1>Microprocessor Notes</h1>
-
-  <section>
-    <details open>
-      <summary>📘 Chapter 1: Introduction to Microprocessor</summary>
-      <ul>
-        <li><strong>Definition:</strong> A microprocessor is a multipurpose, programmable, clock-driven, register-based electronic device that reads binary instructions from a storage deivce called memory and accepts binary data as input and processes data according to those instructions and then provides results as output.</li>
-        <li><strong>History:</strong> First microprocessor was Intel 4004 (4-bit) developed in 1971.</li>
+    <h1>Introduction to Microprocessor</h1>
+    
+    <div class="definition">
+        <h2>Definition</h2>
+        <p>A microprocessor is an integrated circuit that contains all the functions of a central processing unit of a computer. It is a semiconductor chip (like silicon) with a combination of transistors.</p>
+        <p>It is an electronic component that performs the instructions and tasks involved in computer processing which is the central unit and manages the logical instructions passed to it. In short, it processes arithmetic and logical operations to provide desired output.</p>
+    </div>
+    
+    <div class="evolution">
+        <h2>Evolution/History of Microprocessor</h2>
         <ul>
-          <li>Marcian.E. Hubb was the creator and also known as father of microprocessor. The first commerical microprocessor came in 1971, which was a 4-bit microprocessor having 2300 transistors. It was basically designed for calculators at that time.</li>
-        <li>The next intel microprocessor was INTEL 8008 having 3500 transistors after this, INTEL 8080 having 4000 transistors and ZILOG Z80 having 6000 transistors.</li>
-        <li>The 4-bit intel microprocessor was continued and the first 8-bit microprocessor was developed which is intel 8085 which is also important for understanding the core of this subject.</li>
-        <li>Similarly, the next microprocessor was the intel 8086 microprocessor.</li>
-        <li>And then, the evolution of microprocessor continued into PENTIUM III having 9.5 million transistors, here are some of the pentium processors like Pentium, Pentium Pro, Pentium MMX, Pentium Dual-Core.</li>
-        <li>After the Dual-Core Pentium, Intel's primary mainstream processor family became the Core i series, which includes Core i3, Core i5, Core i7, and Core i9.</li>
-      </ul>
-          <li><strong>Components of Microprocessor</strong> 
-            <li>1. Microprocessor (CPU)</li>
-            <p>The brain of the system. Executes instructions, performs arithmetic/logical operations, controls data flow. Examples: Intel 8085, 8086, etc.</p>
-            
-            <li> Memory</li>
-            <ul><li> RAM (Random Access Memory)</li></ul>
+            <li><strong>Mancian E. Hubb</strong> is considered the father of the microprocessor.</li>
+            <li>The first commercial microprocessor was <strong>INTEL 4004</strong> in 1971, with 2300 transistors (4-bit). Designed for calculators.</li>
+            <li>Next came <strong>INTEL 8008</strong> (3500 transistors), then <strong>INTEL 8080</strong> (4000 transistors), and <strong>ZILOG Z80</strong> (6000 transistors).</li>
+            <li>The first 8-bit microprocessor was <strong>INTEL 8085</strong>.</li>
+            <li>Followed by <strong>INTEL 8086</strong> (16-bit).</li>
+            <li>Evolution continued up to <strong>INTEL Pentium III</strong> (9.5 million transistors).</li>
+            <li>Modern microprocessors include the <strong>i3, i5, and i7</strong> series.</li>
+        </ul>
+    </div>
+    
+    <div class="components">
+        <h2>Components of Microprocessor</h2>
+        <p>The basic parts of a microprocessor are <strong>CPU, Bus, and Memory</strong>.</p>
+        
+        <h3>CPU (Central Processing Unit)</h3>
+        <p>Fabricated as a Very Large Scale Integrated circuit (VLSI) with these parts:</p>
+        <ul>
+            <li><strong>Instruction Registers (IR):</strong> Holds instructions to be executed.</li>
+            <li><strong>Decoder:</strong> Converts instructions to machine language and sends to ALU.</li>
+            <li><strong>ALU (Arithmetic Logic Unit):</strong> Performs arithmetic, logical, memory register, and program sequencing operations.</li>
+            <li><strong>Register:</strong> Holds intermediate results during program processing.</li>
+        </ul>
+        
+        <h3>Bus</h3>
+        <p>The fine thin lines connecting different internal parts of the microprocessor. There are three types:</p>
+        
+        <h4>1. Data Bus</h4>
+        <ul>
+            <li>Carries data to and from memory.</li>
+            <li>Bidirectional (data flows both directions).</li>
+            <li>Width equals word length (e.g., 8-bit in 8085 microprocessor).</li>
+            <li>For 8085 microprocessor, ranges from 00H to FFH (hexadecimal).</li>
+        </ul>
+        
+        <h4>2. Address Bus</h4>
+        <ul>
+            <li>Unidirectional (carries address only from CPU to memory or I/O port).</li>
+            <li>Carries address of a memory location or I/O port.</li>
+        </ul>
+        
+        <h4>3. Control Bus</h4>
+        <ul>
+            <li>Carries control signals like clock signals, interrupt signals, or ready signals.</li>
+            <li>Bidirectional.</li>
+            <li>Used to generate timing and control signals.</li>
+            <li>Control signals include:
                 <ul>
-                  <li>Temporary storage (volatile).</li>
-                  <li>Stores data and programs during execution.</li>
+                    <li>Memory read</li>
+                    <li>Memory write</li>
+                    <li>I/O read</li>
+                    <li>I/O write</li>
                 </ul>
-            
-            b. ROM (Read-Only Memory)
-            Permanent storage (non-volatile).
-            
-            Stores boot code or firmware.
-            
-            3. I/O Devices (Input/Output)
-            Used for interaction with the external world.
-            
-            Input devices: Keyboard, switches, sensors.
-            
-            Output devices: Display, LEDs, actuators.</li>
-        <li><strong>Basic Features:</strong></li>
+            </li>
+            <li>Example: If a control bus wire is low (low electricity), memory is read; if high, memory is written.</li>
+        </ul>
+        
+        <h3>Memory</h3>
+        <p>Microprocessor has two types of memory:</p>
         <ul>
-            <li>ALU (Arithmetic Logic Unit)</li>
-            <li>Registers</li>
-            <li>Control Unit</li>
-            <li>Clock and Reset</li>
-          </ul>
-        </li>
-        <li><strong>Important Terms:</strong>
-          <ul>
-            <li><code>Instruction Set</code>: Set of commands the processor can execute</li>
-            <li><code>Bus</code>: Pathway for data (Data Bus, Address Bus, Control Bus)</li>
-          </ul>
-        </li>
-      </ul>
-        <li><strong>8085:</strong> It is an 8-bit microprocessor developed by Intel in 1976.</li>
-        <li><strong>Features of 8085:</strong>
-          <ul>
-            <li>8-bit data bus</li>
-            <li>16-bit address bus</li>
-            <li>74 instructions and 246 opcodes</li>
-            <li>Single +5V supply</li>
-            <li>Clock speed of 3 MHz</li>
-          </ul>
-        </li>
-        <li><strong>Functional Units:</strong>
-          <ul>
-            <li>Accumulator</li>
-            <li>ALU</li>
-            <li>General Purpose Registers (B, C, D, E, H, L)</li>
-            <li>Program Counter (PC)</li>
-            <li>Stack Pointer (SP)</li>
-            <li>Instruction Register and Decoder</li>
-            <li>Timing and Control Unit</li>
-          </ul>
-        </li>
-        <li><strong>Block Diagram:</strong> (Add image or diagram placeholder)</li>
-        <li><strong>Important Pins:</strong>
-          <ul>
-            <li><code>RESET</code>: Resets microprocessor</li>
-            <li><code>CLK</code>: Clock signal</li>
-            <li><code>INTR</code>, <code>RST</code>: Interrupt pins</li>
-            <li><code>IO/M</code>: Distinguishes memory and I/O operation</li>
-          </ul>
-        </li>
-      </ul>
-    </details>
-  </section>
-
+            <li><strong>RAM (Random Access Memory):</strong>
+                <ul>
+                    <li>Volatile memory (loses data when power is off).</li>
+                    <li>Working/runtime memory of the computer.</li>
+                </ul>
+            </li>
+            <li><strong>ROM (Read Only Memory):</strong>
+                <ul>
+                    <li>Non-volatile memory (retains data without power).</li>
+                    <li>Pre-programmed by manufacturer with essential data.</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    
+    <div>
+        <h2>Control and Timing Unit</h2>
+        <p>Provides timing and control signals to the microprocessor to perform various operations. It operates with reference to clock signals.</p>
+        
+        <h3>Control Signals</h3>
+        <ul>
+            <li><strong>ALE (Address Latch Enable):</strong> Synchronizes components of microprocessor.</li>
+            <li><strong>WR (Write):</strong> Used for writing operations (active low).</li>
+            <li><strong>RD (Read):</strong> Used for reading operations (active low).</li>
+        </ul>
+        
+        <h3>Status Signals</h3>
+        <p>Three status signals used in microprocessor: <span class="highlight">S<sub>0</sub></span>, <span class="highlight">S<sub>1</sub></span>, and <span class="highlight">IO/M</span>. They change status according to provided inputs.</p>
+        
+        <table>
+            <tr>
+                <th>IO/M</th>
+                <th>S<sub>0</sub></th>
+                <th>S<sub>1</sub></th>
+                <th>Data Bus Status (Output)</th>
+            </tr>
+            <tr>
+                <td>0</td>
+                <td>0</td>
+                <td>0</td>
+                <td>Halt</td>
+            </tr>
+            <tr>
+                <td>0</td>
+                <td>0</td>
+                <td>1</td>
+                <td>Memory write</td>
+            </tr>
+            <tr>
+                <td>0</td>
+                <td>1</td>
+                <td>0</td>
+                <td>Memory read</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>0</td>
+                <td>1</td>
+                <td>IO write</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>1</td>
+                <td>0</td>
+                <td>IO read</td>
+            </tr>
+            <tr>
+                <td>0</td>
+                <td>1</td>
+                <td>1</td>
+                <td>Opcode fetch</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>Interrupt Acknowledge</td>
+            </tr>
+        </table>
+    </div>
+    
+    <div class="applications">
+        <h2>Applications of Microprocessors</h2>
+        <ol>
+            <li><strong>Instrumentation:</strong>
+                <ul>
+                    <li>Frequency counters, function generators, spectrum analyzers</li>
+                    <li>Medical instrumentation</li>
+                </ul>
+            </li>
+            <li><strong>Control:</strong>
+                <ul>
+                    <li>Home appliances (microwave ovens, washing machines)</li>
+                    <li>Industrial control (speed, pressure, temperature with transducers)</li>
+                </ul>
+            </li>
+            <li><strong>Communication:</strong>
+                <ul>
+                    <li>Telephone industry (digital sets, exchanges, modems)</li>
+                    <li>Television, satellite communication</li>
+                    <li>Railway/air reservation systems</li>
+                    <li>LAN and WAN communication</li>
+                </ul>
+            </li>
+            <li><strong>Consumer Electronics:</strong>
+                <ul>
+                    <li>Toys, entertainment equipment</li>
+                    <li>Calculators, accounting systems</li>
+                    <li>Traffic light control</li>
+                    <li>Military applications</li>
+                    <li>Complex industrial controllers</li>
+                </ul>
+            </li>
+        </ol>
+    </div>
 </body>
 </html>
