@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Buses in Microprocessor</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f7fa;
+      margin: 30px;
+      color: #333;
+    }
+    h1, h2 {
+      color: #2c3e50;
+    }
+    .section {
+      background: #ffffff;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+    th, td {
+      padding: 10px;
+      text-align: left;
+      border: 1px solid #ccc;
+    }
+    th {
+      background-color: #2980b9;
+      color: white;
+    }
+    code {
+      background: #eef;
+      padding: 2px 4px;
+      border-radius: 4px;
+      font-size: 95%;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Buses in a Microprocessor</h1>
+
+  <div class="section">
+    <h2>What is a Bus?</h2>
+    <p>
+      A <strong>bus</strong> is a set of parallel lines used to <strong>transfer data, address, and control signals</strong> 
+      between components like the CPU, memory, and I/O devices. It acts like a digital highway.
+    </p>
+  </div>
+
+  <div class="section">
+    <h2>Types of Buses</h2>
+
+    <h3>1. Data Bus</h3>
+    <p>
+      Transfers actual data. It is <strong>bidirectional</strong>. 
+      In 8085, it is <strong>8-bit wide</strong> (AD<sub>0</sub> to AD<sub>7</sub>).
+    </p>
+
+    <h3>2. Address Bus</h3>
+    <p>
+      Carries the address of memory or I/O location. It is <strong>unidirectional</strong>.
+      In 8085, it is <strong>16-bit wide</strong> (A<sub>8</sub> to A<sub>15</sub>, AD<sub>0</sub> to AD<sub>7</sub>).
+    </p>
+
+    <h3>3. Control Bus</h3>
+    <p>
+      Carries control and timing signals. Used to coordinate operations and signal what action to take (like <code>RD̅</code>, <code>WR̅</code>, <code>ALE</code>, etc.).
+    </p>
+  </div>
+
+  <div class="section">
+    <h2>Bus Summary</h2>
+    <table>
+      <tr>
+        <th>Bus Type</th>
+        <th>Width (8085)</th>
+        <th>Direction</th>
+        <th>Purpose</th>
+      </tr>
+      <tr>
+        <td>Data Bus</td>
+        <td>8 bits</td>
+        <td>Bidirectional</td>
+        <td>Transfer actual data</td>
+      </tr>
+      <tr>
+        <td>Address Bus</td>
+        <td>16 bits</td>
+        <td>Unidirectional</td>
+        <td>Specify memory/I/O address</td>
+      </tr>
+      <tr>
+        <td>Control Bus</td>
+        <td>Varies</td>
+        <td>Both</td>
+        <td>Send control signals (RD̅, WR̅, etc.)</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>Example Operation</h2>
+    <p><strong>CPU reads data from memory:</strong></p>
+    <ol>
+      <li>CPU places address on the address bus</li>
+      <li>Control bus sends <code>RD̅</code> signal to memory</li>
+      <li>Memory puts data on the data bus</li>
+      <li>CPU reads the data</li>
+    </ol>
+  </div>
+
+</body>
+</html>
