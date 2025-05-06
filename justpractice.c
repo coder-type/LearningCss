@@ -13,7 +13,7 @@ typedef struct {
 
 int main() {
     int n, ans;
-
+    
     printf("Enter the no. of persons you want to give: ");
     scanf("%d", &n);
 

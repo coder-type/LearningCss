@@ -17,7 +17,7 @@ public:
 
     // Parameterized constructor
     Book(const char* name, float _price) {
-        title = new char[strlen(name) + 1];
+        title = new char[strlen(name) + 1];//+1 because character needs a null character at the end
         for (int i = 0; i < strlen(name) + 1; i++) {
             title[i] = name[i];  // copy character by character
         }
