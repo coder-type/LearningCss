@@ -9,7 +9,7 @@ namespace first {
     public:
         void asc(string name) {
             this->name = name;
-            cout << "Name in Ascending order = " << name << endl;
+            cout << "Name in Ascending order = " << name << endl; 
         }
     };
 }
