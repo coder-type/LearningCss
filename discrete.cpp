@@ -1,164 +1,192 @@
-#include<iostream>
-#include<iomanip>
-#include<algorithm>
+#include <iostream>
+#include <iomanip>
+#include <algorithm>
+#include <limits>
+
 using namespace std;
-// Forward declarations
-int _intersec(int arr[], int brr[], int na, int nb);
-void intersec(int arr[], int brr[], int na, int nb);
-void diff(int arr[], int brr[], int na, int nb);
-void _union(int arr[],int brr[],int na,int nb);
 
-void _union(int arr[],int brr[],int na,int nb){
-  int  c; 
-  c = _intersec(arr,brr,na,nb);
-    int u;
-     u = na + nb-c;
-    int *u_set;
-    u_set = new int[u];
-    for(int i = 0; i < na; i++)
-    {
-        for(int j=i+1;j<na;j++){
-            if(arr[i]==arr[j]){
-        u_set[i] = arr[i];//copying elements of a into union set;
-        }
-        else{
-            u_set[i] = arr[i];
-        }
-    }}
-    int put = na;
-    for(int i=0; i<nb;i++){ // putting elements of b that aren't in a;
-        bool found = false;
-        for(int j=0;j<na;j++){
-        if(brr[i] == arr[j]){
-            found = true;
-            break;
+// Helper function
+bool contains(const int an_array[], int len, int value) {
+    for (int i = 0; i < len; ++i) {
+        if (an_array[i] == value) {
+            return true;
         }
     }
-        if(!found){
-            u_set[put++] = brr[i]; 
-        }
-    }
-
-    
-        cout<<"Union of Set A and Set B."<<endl;
-        for(int i=0;i<u;i++){
-            cout<<u_set[i]<<"\t";
-        }
-        delete[] u_set;
-    }
-int _intersec(int arr[],int brr[],int na,int nb){
-    int count=0;
-    for(int i=0;i<na;i++)
-    {
-        for(int j=0;j<nb;j++)
-    {
-            if(arr[i]==brr[j]){
-                count++;
-                break;
-
-            }
-    }
-    
+    return false;
 }
 
-return count;
-    }
-    void intersec(int arr[],int brr[],int na,int nb){
-        int *p_intersec;
-        int c;
-        c = _intersec(arr,brr,na,nb);
-        p_intersec = new int[c];
-        for(int i=0;i<na;i++)
-        {
-            for(int j=0;j<nb;j++)
-        {
-                if(arr[i]==brr[j]){
-                    p_intersec[i] = arr[i];
-                    break;
-                }
+int _intersec(int arr[], int brr[], int na, int nb) {
+    if (na == 0 || nb == 0) return 0;
+
+    int* temp_common = new int[min(na, nb)];
+    int count = 0;
+
+    for (int i = 0; i < na; ++i) {
+        for (int j = 0; j < nb; ++j) {
+            if (arr[i] == brr[j] && !contains(temp_common, count, arr[i])) {
+                temp_common[count++] = arr[i];
+                break;
+            }
         }
-        
     }
-    cout<<"(AnB) = { ";
-    for(int i=0;i<c-1; i++){
-        
-        cout<<p_intersec[i]<<", ";
+
+    delete[] temp_common;
+    return count;
+}
+
+void _union(int arr[], int brr[], int na, int nb) {
+    int u = na + nb;
+    int *u_set = new int[u];
+    int current_union_idx = 0;
+
+    for (int i = 0; i < na; i++) {
+        if (!contains(u_set, current_union_idx, arr[i])) {
+            u_set[current_union_idx++] = arr[i];
+        }
     }
-    
-    cout<<p_intersec[i];
-    cout<<"}"<<endl;
+
+    for (int i = 0; i < nb; i++) {
+        if (!contains(u_set, current_union_idx, brr[i])) {
+            u_set[current_union_idx++] = brr[i];
+        }
+    }
+
+    sort(u_set, u_set + current_union_idx);
+
+    cout << "Union of Set A and Set B: { ";
+    for (int i = 0; i < current_union_idx; i++) {
+        cout << u_set[i];
+        if (i < current_union_idx - 1) cout << ", ";
+    }
+    cout << " }" << endl;
+    delete[] u_set;
+}
+
+void intersec(int arr[], int brr[], int na, int nb) {
+    int estimated_max_common = min(na, nb);
+    int *p_intersec = new int[estimated_max_common];
+    int common_count = 0;
+
+    for (int i = 0; i < na; ++i) {
+        for (int j = 0; j < nb; ++j) {
+            if (arr[i] == brr[j] && !contains(p_intersec, common_count, arr[i])) {
+                p_intersec[common_count++] = arr[i];
+                break;
+            }
+        }
+    }
+
+    sort(p_intersec, p_intersec + common_count);
+
+    cout << "(A ∩ B) = { ";
+    for (int i = 0; i < common_count; i++) {
+        cout << p_intersec[i];
+        if (i < common_count - 1) cout << ", ";
+    }
+    cout << " }" << endl;
     delete[] p_intersec;
 }
-    void diff(int arr[],int brr[],int na,int nb){
-        int count=-1;
-        for(int i = 0;i<na;i++){
-            for(int j =0;j<nb;j++){
-                if(arr[i]==brr[j]){
-                count++;
+
+void diff(int arr[], int brr[], int na, int nb, const string& label = "(A - B)") {
+    int *p = new int[na];
+    int diff_count = 0;
+
+    for (int i = 0; i < na; ++i) {
+        bool found_in_brr = false;
+        for (int j = 0; j < nb; ++j) {
+            if (arr[i] == brr[j]) {
+                found_in_brr = true;
                 break;
             }
-            }
         }
-        int dy_a = na-count;
-        int *p;
-        int index=0;
-        p = new int[dy_a];
-        for(int i = 0;i<na;i++){
-            bool found = false;
-            for(int j=0;j<nb;j++){
-                if(arr[i]==brr[j]){
-                    found = true;
-                    break;
-                }
-            }
-            if(!found){
-                p[index++] = arr[i];
-            }
+
+        if (!found_in_brr && !contains(p, diff_count, arr[i])) {
+            p[diff_count++] = arr[i];
         }
-        cout<<"(A-B) = {";
-        for(i=0;i<dy_a-1;i++){
-            cout<<p[i]<<", ";
-        }
-        cout<<p[i]<<"}"<<endl;
-        delete[] p;
+    }
+
+    sort(p, p + diff_count);
+
+    cout << label << " = { ";
+    for (int i = 0; i < diff_count; i++) {
+        cout << p[i];
+        if (i < diff_count - 1) cout << ", ";
+    }
+    cout << " }" << endl;
+    delete[] p;
 }
-int main(){
-    int *a,n,choice;
-    cout<<"Enter the no. of elements of set A"<<endl;
-    cin>>n;
-    a = new int[n];
-    for(int i =0;i<n;i++){
-        cout<<"A [ "<<i+1<<" ]  = ";
-        cin>>a[i];
+
+void readSet(int*& arr, int& n, const string& setName) {
+    cout << "Enter the number of elements of set " << setName << ": ";
+    while (!(cin >> n) || n < 0) {
+        cout << "Invalid input. Please enter a non-negative number: ";
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
     }
-    int *b,n1;
-    cout<<"Enter the no. of elements of set B"<<endl;
-    cin>>n1;
-    b = new int[n1];
-    for(int i =0;i<n1;i++){
-        cout<<"B [ "<<i+1<<" ]  = ";
-        cin>>b[i];
+
+    if (arr) delete[] arr;
+    arr = (n > 0) ? new int[n] : nullptr;
+
+    for (int i = 0; i < n; i++) {
+        cout << setName << " [" << i + 1 << "] = ";
+        cin >> arr[i];
     }
-   while(1) {cout<<"Enter the choice"<<endl<<"1. Union"<<endl<<"2. Intersection"<<endl<<"3. Difference"<<endl<<"4. Exit"<<endl;
-            cout<<"Enter(1-4) = ";
-            cin>>choice;
-    switch(choice){
-        case 1:
-     _union(a,b,n,n1);
-     break;
-     case 2:
-     intersec(a,b,n,n1);
-     break;
-     case 3:
-    diff(a,b,n,n1);
-     break;
-     case 4:
-     delete[] a;
-     delete[] b;
-     return 0;
-     default:
-     cout<<"Invalid Number Please try again!"<<endl;
+}
+
+int main() {
+    int *a = nullptr, *b = nullptr;
+    int n = 0, n1 = 0;
+    int choice;
+
+    while (true) {
+        readSet(a, n, "A");
+        readSet(b, n1, "B");
+
+        while (true) {
+            cout << "\nChoose an operation:\n"
+                 << "1. Union\n"
+                 << "2. Intersection\n"
+                 << "3. Difference (A - B)\n"
+                 << "4. Difference (B - A)\n"
+                 << "5. Restart (Enter new sets)\n"
+                 << "6. Exit\n"
+                 << "Enter choice (1-6): ";
+
+            if (!(cin >> choice)) {
+                cout << "Invalid input. Please enter a number.\n";
+                cin.clear();
+                cin.ignore(numeric_limits<streamsize>::max(), '\n');
+                continue;
+            }
+
+            switch (choice) {
+                case 1:
+                    _union(a, b, n, n1);
+                    break;
+                case 2:
+                    intersec(a, b, n, n1);
+                    break;
+                case 3:
+                    diff(a, b, n, n1, "(A - B)");
+                    break;
+                case 4:
+                    diff(b, a, n1, n, "(B - A)");
+                    break;
+                case 5:
+                    cout << "\nRestarting...\n";
+                    goto restart;
+                case 6:
+                    cout << "Exiting.\n";
+                    if (a) delete[] a;
+                    if (b) delete[] b;
+                    return 0;
+                default:
+                    cout << "Invalid choice. Please try again.\n";
+            }
+        }
+
+        restart:;
     }
-   }
-   
+
+    return 0;
 }
