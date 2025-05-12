@@ -15,7 +15,6 @@ namespace set{
 class _union {
 public:
     int flag;
-
     void calc(int* arr, int* brr, int na, int nb) {
         int count = 0;
         helper(arr, brr, na, nb, count);
