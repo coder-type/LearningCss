@@ -108,8 +108,8 @@ public:
                 aptr[index++] = arr[i];
             }
         }
-        cout<<"Difference (A-B) = {"<<endl;
-                for (int i = 0; i < count; i++) {
+        cout<<"Difference (A-B) = {";
+                for (int i = 0; i < index; i++) {
             cout << aptr[i];
             if (i < index - 1) cout << ", ";
         }
@@ -135,7 +135,7 @@ public:
                 bptr[index++] = brr[i];
             }
         }
-        cout<<"Difference (B-A) = {"<<endl;
+        cout<<"Difference (B-A) = {";
                 for (int i = 0; i < index; i++) {
             cout << bptr[i];
             if (i < index - 1) cout << ", ";
