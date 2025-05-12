@@ -176,7 +176,7 @@ int main() {
                     cout << "\nRestarting...\n";
                     goto restart;
                 case 6:
-                    cout << "Exiting.\n";
+                    cout << "Exiting........\n";
                     if (a) delete[] a;
                     if (b) delete[] b;
                     return 0;
