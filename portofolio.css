@@ -36,7 +36,8 @@ body {
     color: #4CAF50;
   }
   .label {
-    display:block;
+    display:flex;
+    gap:5vw;
     text-align:horizontal;
   }
   
@@ -79,4 +80,11 @@ body {
     padding: 5px;
     font-size: 18px;
   }
+  .list{
+    background-color: white;
+    border-radius: 10px;
+      
+    
+  }
+
   
