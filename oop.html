@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>OOP Notes - All Chapters</title>
+  <title>OOP Notes - Introduction</title>
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
@@ -39,6 +39,7 @@
     }
     ul {
       line-height: 1.6;
+      padding-left: 20px;
     }
     pre {
       background: #f4f4f4;
@@ -49,136 +50,209 @@
     code {
       font-family: Consolas, monospace;
     }
-    button {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      padding: 12px 16px;
-      font-size: 16px;
-      border: none;
-      background: #005f99;
-      color: white;
-      border-radius: 8px;
-      cursor: pointer;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    }
-    #popup {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background: white;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.3);
-      display: none;
-      z-index: 1000;
-    }
-    #overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background: rgba(0, 0, 0, 0.5);
-      display: none;
-      z-index: 999;
-    }
-    textarea {
+    table {
       width: 100%;
-      height: 100px;
-      padding: 10px;
-      border-radius: 8px;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    th, td {
       border: 1px solid #ccc;
-      margin-bottom: 10px;
-      font-family: 'Segoe UI', sans-serif;
+      padding: 10px;
+      text-align: left;
+    }
+    th {
+      background: #e1ecf4;
+      color: #333;
     }
   </style>
 </head>
 <body>
-  <h1>Object-Oriented Programming (OOP) Notes</h1>
+  <h1>Object-Oriented Programming (OOP) - Notes</h1>
 
   <section>
-    <details open>
-      <summary>📘 Chapter 1: Introduction to OOP</summary>
+    <details close>
+      <summary>📘 Introduction To Object Oriented Programming</summary>
       <ul>
-        <li><strong>Definition:</strong> OOP is a programming paradigm based on the concept of "objects".</li>
+        <li><strong>Definition:</strong> OOP is a programming paradigm based on the concept of "objects", which can contain data and code to manipulate that data.</li>
         <li><strong>Key Concepts:</strong>
           <ul>
-            <li>Object</li>
-            <li>Class</li>
-            <li>Encapsulation</li>
-            <li>Abstraction</li>
-            <li>Inheritance</li>
-            <li>Polymorphism</li>
+            <li><strong>Class:</strong> A blueprint for creating objects.</li>
+            <li><strong>Object:</strong> An instance of a class.</li>
+            <li><strong>Encapsulation:</strong> Bundling data and methods that operate on the data within one unit.</li>
+            <li><strong>Abstraction:</strong> Hiding complex implementation details and showing only the necessary features.</li>
+            <li><strong>Inheritance:</strong> Mechanism by which one class can inherit properties and methods from another.</li>
+            <li><strong>Polymorphism:</strong> Ability to process objects differently based on their data type or class.</li>
           </ul>
         </li>
         <li><strong>Advantages of OOP:</strong>
           <ul>
-            <li>Modularity</li>
-            <li>Code Reusability</li>
-            <li>Scalability</li>
-            <li>Maintainability</li>
+            <li><strong>Modularity:</strong> Code is organized into classes and objects, making it easier to manage and update.</li>
+            <li><strong>Reusability:</strong> Classes and methods can be reused across different programs, reducing redundancy.</li>
+            <li><strong>Scalability:</strong> OOP makes it easier to expand and maintain large codebases over time.</li>
+            <li><strong>Maintainability:</strong> Since code is modular and organized, debugging and updating become simpler.</li>
+            <li><strong>Data Security:</strong> Encapsulation protects data through controlled access.</li>
           </ul>
         </li>
-        <li><strong>Procedural vs OOP:</strong>
-          <ul>
-            <li>Procedural focuses on functions; OOP focuses on objects and classes.</li>
-          </ul>
+        <li><strong>Procedural Programming vs OOP:</strong>
+          <table>
+            <thead>
+              <tr>
+                <th>Aspect</th>
+                <th>Procedural Programming</th>
+                <th>Object-Oriented Programming</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Focus</td>
+                <td>Functions and procedures</td>
+                <td>Objects and classes</td>
+              </tr>
+              <tr>
+                <td>Code Organization</td>
+                <td>Linear and top-down</td>
+                <td>Modular and hierarchical</td>
+              </tr>
+              <tr>
+                <td>Data Handling</td>
+                <td>Global data shared among functions</td>
+                <td>Encapsulated within objects</td>
+              </tr>
+              <tr>
+                <td>Reusability</td>
+                <td>Limited code reuse</td>
+                <td>High code reuse via inheritance</td>
+              </tr>
+              <tr>
+                <td>Security</td>
+                <td>Less secure, data is open</td>
+                <td>More secure through encapsulation</td>
+              </tr>
+              <tr>
+                <td>Examples</td>
+                <td>C, Fortran</td>
+                <td>C++, Java, Python (with OOP)</td>
+              </tr>
+            </tbody>
+          </table>
         </li>
       </ul>
     </details>
   </section>
+<section>
+  <details close>
+    <summary>📘 Basic of C++ Programming</summary>
+    <h2>Introduction to C++</h2>
+    <ul>
+      <li>C++ is an extension of the C programming language with object-oriented features.</li>
+      <li>Supports both procedural and object-oriented programming paradigms.</li>
+      <li>Developed by Bjarne Stroustrup in early 1980s.</li>
+    </ul>
 
-  <section>
-    <details>
-      <summary>📗 Chapter 2: Classes and Objects</summary>
-      <ul>
-        <li><strong>Class:</strong> A blueprint for creating objects. It defines properties and behaviors.</li>
-        <li><strong>Object:</strong> An instance of a class.</li>
-        <li><strong>Access Modifiers:</strong>
-          <ul>
-            <li><code>private</code>: Accessible only within the class.</li>
-            <li><code>public</code>: Accessible from outside the class.</li>
-            <li><code>protected</code>: Accessible in the same class and subclasses.</li>
-          </ul>
-        </li>
-        <li><strong>Constructor:</strong> A special method used to initialize objects.</li>
-        <li><strong>Destructor:</strong> A method that is automatically called when an object is destroyed (in some languages).</li>
-        <li><strong>Example in C++:</strong>
-          <pre><code>class Student {
+    <h2>Structure of a C++ Program</h2>
+    <ul>
+      <li>Every C++ program has a <code>main()</code> function which acts as the entry point.</li>
+      <li>Basic structure includes header files, main function, and statements inside it.</li>
+    </ul>
+    <pre><code>#include &lt;iostream&gt;
+using namespace std;
+
+int main() {
+  cout &lt;&lt; "Hello, World!"; 
+  return 0;
+}
+</code></pre>
+
+    <h2>Variables and Data Types</h2>
+    <ul>
+      <li>Variables store data; must be declared with a data type before use.</li>
+      <li>Common data types: <code>int</code>, <code>float</code>, <code>double</code>, <code>char</code>, <code>bool</code>, <code>string</code>.</li>
+      <li>Example:
+        <pre><code>int age = 25;
+float price = 99.99;
+char grade = 'A';</code></pre>
+      </li>
+    </ul>
+
+    <h2>Input and Output</h2>
+    <ul>
+      <li>Use <code>cin</code> for input and <code>cout</code> for output.</li>
+      <li>Example:
+        <pre><code>int number;
+cout &lt;&lt; "Enter a number: ";
+cin &gt;&gt; number;
+cout &lt;&lt; "You entered: " &lt;&lt; number;</code></pre>
+      </li>
+    </ul>
+
+    <h2>Functions in C++</h2>
+    <ul>
+      <li>Functions are blocks of code that perform specific tasks.</li>
+      <li>Syntax:
+        <pre><code>return_type function_name(parameters) {
+  // body
+}</code></pre>
+      </li>
+      <li>Example:
+        <pre><code>int add(int a, int b) {
+  return a + b;
+}</code></pre>
+      </li>
+    </ul>
+
+    <h2>Classes and Objects</h2>
+    <ul>
+      <li><strong>Class:</strong> Blueprint to create objects.</li>
+      <li><strong>Object:</strong> Instance of a class.</li>
+      <li>Syntax for class:
+        <pre><code>class Car {
   public:
-    string name;
-    int age;
+    string brand;
+    int year;
 
     void display() {
-      cout << "Name: " << name << ", Age: " << age << endl;
+      cout &lt;&lt; "Brand: " &lt;&lt; brand &lt;&lt; ", Year: " &lt;&lt; year &lt;&lt; endl;
     }
 };</code></pre>
-        </li>
-      </ul>
+      </li>
+      <li>Creating object and using:
+        <pre><code>Car car1;
+car1.brand = "Toyota";
+car1.year = 2020;
+car1.display();</code></pre>
+      </li>
+    </ul>
+
+    <h2>Constructors</h2>
+    <ul>
+      <li>Special functions to initialize objects.</li>
+      <li>Have same name as the class, no return type.</li>
+      <li>Example:
+        <pre><code>class Car {
+  public:
+    string brand;
+    int year;
+
+    Car(string b, int y) {  // Constructor
+      brand = b;
+      year = y;
+    }
+};</code></pre>
+      </li>
+    </ul>
+
+    <h2>Access Specifiers</h2>
+    <ul>
+      <li>Define visibility of class members.</li>
+      <li>Types:
+        <ul>
+          <li><code>public</code> - accessible from outside the class</li>
+          <li><code>private</code> - accessible only inside the class</li>
+          <li><code>protected</code> - accessible in derived classes</li>
+        </ul>
+      </li>
+    </ul>
     </details>
   </section>
-
-  <button onclick="openPopup()">➕ Add Note</button>
-
-  <div id="overlay" onclick="closePopup()"></div>
-  <div id="popup">
-    <h3>Add New Note</h3>
-    <textarea placeholder="Write your note here..."></textarea>
-    <br/>
-    <button onclick="closePopup()">Done</button>
-  </div>
-
-  <script>
-    function openPopup() {
-      document.getElementById('popup').style.display = 'block';
-      document.getElementById('overlay').style.display = 'block';
-    }
-    function closePopup() {
-      document.getElementById('popup').style.display = 'none';
-      document.getElementById('overlay').style.display = 'none';
-    }
-  </script>
-</body>
-</html>
+  </body>
+  </html>
