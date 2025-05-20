@@ -48,7 +48,7 @@ public:
             cout << uptr[i];
             if (i < index - 1) cout << ", ";
         }
-        cout << " }" << endl;
+        cout << "}" << endl;
 
         delete[] uptr; // avoid memory leak
     }
@@ -139,7 +139,7 @@ public:
             cout << bptr[i];
             if (i < index - 1) cout << ", ";
         }
-        cout << " }" << endl;
+        cout << "}" << endl;
 
         delete[] bptr;
 
@@ -187,6 +187,7 @@ int main(){
             <<"3. DIFFERENCE\n"
             <<"4. RESTART\n"
             <<"5. EXIT\n";
+        cout<<"Choose (1-5) = ";
             if(!(cin>>choose)){
                 cin.clear();
                 cin.ignore(numeric_limits<streamsize>::max(),'\n');
@@ -202,6 +203,7 @@ int main(){
                 P:cout<<"Choose:'\n"
                     <<"1. A-B \n"
                     <<"2. B-A \n";
+                cout<<"Your Answer(1/2) = ";
                     if(!(cin>>sub_choice)){
                         cout<<"INVALID INPUT!!";
                         cin.clear();
