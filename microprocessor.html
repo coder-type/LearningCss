@@ -94,7 +94,7 @@
 <body>
     <h1>MICROPROCESSOR NOTES</h1>
     <section>
-        <details open>
+        <details close>
     <summary>Chapter 1: Introduction to Microprocessor</summary>
     
     <div class="definition">
@@ -282,5 +282,114 @@
     </div>
     </details>
     </section>
+<section>
+    <details close>
+        <summary>Chapter 2: Microprocessor Architecture and Microcomputer Systems</summary>
+
+        <div class="definition">
+            <h2>Definition</h2>
+            <p>The microprocessor architecture refers to the internal structure and organization of a microprocessor, detailing how it processes instructions and interacts with memory and I/O devices. In microcomputer systems, the microprocessor serves as the central unit that manages and controls all operations.</p>
+        </div>
+
+        <div class="components">
+            <h2>8085 Microprocessor Architecture</h2>
+            <p>The 8085 microprocessor is an 8-bit processor with a 16-bit address bus, capable of addressing 64KB of memory. Its architecture comprises several key components:</p>
+
+            <h3>1. Arithmetic and Logic Unit (ALU)</h3>
+            <ul>
+                <li>Performs arithmetic operations like addition and subtraction.</li>
+                <li>Executes logical operations such as AND, OR, and XOR.</li>
+                <li>Sets or resets flags based on the result of operations.</li>
+            </ul>
+
+            <h3>2. Register Array</h3>
+            <ul>
+                <li>Includes six general-purpose registers: B, C, D, E, H, and L.</li>
+                <li>Registers can be paired as BC, DE, and HL for 16-bit operations.</li>
+                <li>Accumulator (A) is used for arithmetic and logic operations.</li>
+            </ul>
+
+            <h3>3. Program Counter (PC) and Stack Pointer (SP)</h3>
+            <ul>
+                <li><strong>Program Counter (PC):</strong> Holds the address of the next instruction to be executed.</li>
+                <li><strong>Stack Pointer (SP):</strong> Points to the top of the stack in memory, used during subroutine calls and interrupts.</li>
+            </ul>
+
+            <h3>4. Instruction Register and Decoder</h3>
+            <ul>
+                <li><strong>Instruction Register:</strong> Temporarily holds the current instruction fetched from memory.</li>
+                <li><strong>Decoder:</strong> Interprets the instruction and signals the necessary operations to be performed.</li>
+            </ul>
+
+            <h3>5. Timing and Control Unit</h3>
+            <ul>
+                <li>Generates control signals to synchronize operations of the microprocessor.</li>
+                <li>Manages the flow of data between the microprocessor and peripherals.</li>
+            </ul>
+
+            <h3>6. Interrupt Control</h3>
+            <ul>
+                <li>Handles interrupt signals, allowing the microprocessor to respond to external events.</li>
+                <li>Supports multiple interrupt lines with varying priorities.</li>
+            </ul>
+
+            <h3>7. Serial I/O Control</h3>
+            <ul>
+                <li>Manages serial communication through SID (Serial Input Data) and SOD (Serial Output Data) lines.</li>
+            </ul>
+
+            <h3>8. Address and Data Buses</h3>
+            <ul>
+                <li><strong>Address Bus:</strong> 16-bit unidirectional bus used to address memory locations.</li>
+                <li><strong>Data Bus:</strong> 8-bit bidirectional bus used to transfer data between the microprocessor and memory or I/O devices.</li>
+            </ul>
+        </div>
+
+        <div class="components">
+            <h2>Microcomputer System Organization</h2>
+            <p>A microcomputer system integrates the microprocessor with memory and I/O devices to perform computing tasks. The primary components include:</p>
+
+            <h3>1. Memory</h3>
+            <ul>
+                <li><strong>RAM (Random Access Memory):</strong> Volatile memory used for temporary data storage during program execution.</li>
+                <li><strong>ROM (Read-Only Memory):</strong> Non-volatile memory containing permanent instructions or data.</li>
+            </ul>
+
+            <h3>2. Input/Output Devices</h3>
+            <ul>
+                <li>Allow the microcomputer to interact with the external environment.</li>
+                <li>Examples include keyboards, displays, printers, and communication interfaces.</li>
+            </ul>
+
+            <h3>3. System Bus</h3>
+            <ul>
+                <li>Comprises the address bus, data bus, and control bus.</li>
+                <li>Facilitates communication between the microprocessor, memory, and I/O devices.</li>
+            </ul>
+
+            <h3>4. Clock Generator</h3>
+            <ul>
+                <li>Provides the necessary clock signals to synchronize operations within the microcomputer system.</li>
+            </ul>
+
+            <h3>5. Power Supply</h3>
+            <ul>
+                <li>Supplies the required electrical power to all components of the microcomputer system.</li>
+            </ul>
+        </div>
+
+        <div class="applications">
+            <h2>Applications of Microprocessor-Based Systems</h2>
+            <ol>
+                <li><strong>Embedded Systems:</strong> Used in appliances, automobiles, and industrial machines for control functions.</li>
+                <li><strong>Personal Computers:</strong> Serve as the central processing unit in desktops and laptops.</li>
+                <li><strong>Communication Devices:</strong> Integral to mobile phones, routers, and modems.</li>
+                <li><strong>Instrumentation:</strong> Employed in medical devices, measurement instruments, and monitoring systems.</li>
+                <li><strong>Consumer Electronics:</strong> Found in televisions, gaming consoles, and smart home devices.</li>
+            </ol>
+        </div>
+    </details>
+</section>
+
 </body>
 </html>
